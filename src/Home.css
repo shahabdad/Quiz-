@@ -1,0 +1,31 @@
+
+
+
+/* Home.css */
+
+.home-bg {
+  background-color: #051b31; /* dark blue */
+  min-height: 100vh;
+}
+
+.tech-title {
+  font-size: 6rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.quest-border {
+  color: white;
+  border: 3px solid #007bff; /* blue border */
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.lead {
+  color: #f1f1f1;
+}
+
+.blue-dash {
+  color: #007bff; /* Bootstrap primary blue */
+}

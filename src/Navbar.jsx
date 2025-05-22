@@ -19,25 +19,26 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px 20px',
+    padding: '25px 20px',
     backgroundColor: '#1e1e2f',
     color: '#fff',
   },
   logo: {
-    fontSize: '1.5rem',
+    fontSize: '2.5rem',
     fontWeight: 'bold',
   },
   navLinks: {
     display: 'flex',
     listStyle: 'none',
-    gap: '20px',
+    gap: '50px',
     margin: 0,
     padding: 0,
   },
   link: {
     color: '#fff',
     textDecoration: 'none',
-    fontSize: '1rem',
+    fontSize: '2rem',
+        
   },
 };
 
