@@ -1,0 +1,101 @@
+import React from 'react';
+
+const App = () => {
+  const questions = [
+    "What is the capital of Pakistan?",
+    "2 + 2 = ?",
+    "Which planet is red?",
+    "Who wrote Hamlet?",
+    "Largest ocean on Earth?",
+  ];
+
+  return (
+    <div className="container py-4">
+      <div className="row g-4">
+        {/* Left: Question List */}
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-header bg-primary text-white text-center">
+              Question List
+            </div>
+            <div className="card-body">
+              {questions.map((q, index) => (
+                <button
+                  key={index}
+                  className={`btn w-100 mb-2 ${
+                    index === 0 ? 'btn-primary text-white fw-bold' : 'btn-outline-primary'
+                  }`}
+                >
+                  Q{index + 1}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Question View, Options, Feedback */}
+        <div className="col-md-8">
+          {/* Question View */}
+          <div className="card mb-4">
+            <div className="card-header bg-primary text-white">
+              Question View
+            </div>
+            <div className="card-body">
+              <p className="card-text">What is the capital of Pakistan?</p>
+              <div className="d-flex justify-content-end gap-2 mt-3">
+                <button className="btn btn-primary">Prev</button>
+                <button className="btn btn-primary">Next</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="row g-4">
+            {/* Options */}
+            <div className="col-md-6">
+              <div className="card">
+                <div className="card-header bg-primary text-white">
+                  Options
+                </div>
+                <div className="card-body">
+                  {["Karachi", "Lahore", "Islamabad", "Quetta"].map((opt, i) => (
+                    <div className="form-check mb-2" key={i}>
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        name="option"
+                        id={`option-${i}`}
+                      />
+                      <label className="form-check-label" htmlFor={`option-${i}`}>
+                        {opt}
+                      </label>
+                    </div>
+                  ))}
+                  <button className="btn btn-primary mt-2">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            {/* Feedback */}
+            <div className="col-md-6">
+              <div className="card">
+                <div className="card-header bg-primary text-white">
+                  Feedback
+                </div>
+                <div className="card-body">
+                  <textarea
+                    className="form-control mb-2"
+                    rows="5"
+                    placeholder="Your notes or explanation..."
+                  ></textarea>
+                  <button className="btn btn-primary w-100">Send Feedback</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  );
+};
+
+export default App;
