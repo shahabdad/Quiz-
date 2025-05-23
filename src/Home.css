@@ -1,10 +1,5 @@
-
-
-
-/* Home.css */
-
 .home-bg {
-  background-color: #051b31; /* dark blue */
+  background-color: #051b31; 
   min-height: 100vh;
 }
 
@@ -17,7 +12,7 @@
 
 .quest-border {
   color: white;
-  border: 3px solid #007bff; /* blue border */
+  border: 3px solid #007bff;
   padding: 0 10px;
   border-radius: 5px;
 }
