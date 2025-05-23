@@ -9,7 +9,7 @@ const About = () => <h1>About Us</h1>;
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <div style={{ padding: '20px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
