@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
+import Quizzes from './Quizzes';
 
 
-const Quizzes = () => <h1>All Quizzes</h1>;
+// const Quizzes = () => <h1>All Quizzes</h1>;
 const About = () => <h1>About Us</h1>;
 
 function App() {

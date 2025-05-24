@@ -1,6 +1,6 @@
 import React from "react";
  
-const Sidebar = ({ total,current}  )   => {
+const Sidebar = ({ total , current }  )   => {
     return (
 
         <div className="bg-light border-end p-3 h-100">

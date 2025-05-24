@@ -40,7 +40,7 @@
 
 
 import React, {useState} from "react";
-import questions from "./question";
+import questions from "./questions";
 import Sidebar from "./Sidebar";
 
 const Quizzes = () =>  {
@@ -75,12 +75,26 @@ const Quizzes = () =>  {
                                 <button 
                                 key={index}
                                 className="btn btn-outline-primary  w-100 mb-2 text-start"
+                                >
+                                    {opt}
+                                </button>
                             ))}
                         </div>
                         </div>
+            ) : (
+                <div className="text-center mt-5" >
+                    <h2>Quiz Complete !</h2>
+                     <p className="lead mt-3">
+                        Your score: <strong>{score}</strong>
+
+                     </p>
+                     <button className="btn btn-primary  mt-3" onclink= {()  => window.location.reload()} >Restart Quiz</button>
+                    </div>
             )}
         </div>
         
     </div>
-    )
-}
+    );
+};
+
+ export default Quizzes;
