@@ -331,7 +331,8 @@
 import React, { useState } from "react";
 import questions from "./questions";
 import Sidebar from "./Sidebar";
-import "./quiz.css"; // External CSS file
+import "./quiz.css"; 
+import  Footer from "./Footer";
 import { FaCheckCircle, FaTimesCircle, FaEnvelope, FaRedoAlt } from "react-icons/fa";
 
 const Quizzes = () => {
@@ -446,7 +447,7 @@ const Quizzes = () => {
         )}
 
         <div className="quiz-footer">
-          <p>
+          {/* <p>
             C++ is a foundational programming language that offers a deep understanding of computer systems. Its combination of low-level memory manipulation and high-level abstractions makes it ideal for learning how software interacts with hardware. By mastering C++, students gain insights into performance optimization, memory management, and object-oriented programming.
             <br /><br />
             In the real world, C++ is extensively used in developing operating systems, game engines, and high-performance applications. For instance, major operating systems like Windows and macOS have components written in C++. Game engines such as Unreal Engine leverage C++ for its speed and efficiency.
@@ -454,7 +455,10 @@ const Quizzes = () => {
             Moreover, C++ plays a significant role in the development of embedded systems and IoT devices. Its ability to provide precise control over system resources makes it suitable for programming microcontrollers and firmware for electronic devices.
             <br /><br />
             For students aiming to pursue careers in software development, robotics, or systems engineering, proficiency in C++ opens doors to numerous opportunities. It not only enhances problem-solving skills but also provides a competitive edge in performance-critical industries.
-          </p>
+          </p> */}
+
+          <Footer />
+
         </div>
       </div>
     </div>
