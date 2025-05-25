@@ -8,7 +8,7 @@ const Sidebar = ({ total , current }  )   => {
                 Questions
             </h5>
             <ul className="list-unstyled">
-                {Array.form({ length: total }).map((_, i) => (
+                {Array.from({ length: total }).map((_, i) => (
                     <li 
                     key={i}
                     className={`mb-2 p-2 rounded  text-center ${

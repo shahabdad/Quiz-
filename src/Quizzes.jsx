@@ -88,7 +88,7 @@ const Quizzes = () =>  {
                         Your score: <strong>{score}</strong>
 
                      </p>
-                     <button className="btn btn-primary  mt-3" onclink= {()  => window.location.reload()} >Restart Quiz</button>
+                     <button className="btn btn-primary  mt-3" onClink= {()  => window.location.reload()} >Restart Quiz</button>
                     </div>
             )}
         </div>
