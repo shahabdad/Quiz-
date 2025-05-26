@@ -3,11 +3,24 @@
   min-height: 100vh;
 }
 
-.tech-title {
+/* .tech-title {
   font-size: 6rem;
   font-weight: 800;
   color: white;
   letter-spacing: 2px;
+} */
+
+.tech-title {
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 6rem; /* Large desktop */
+}
+
+@media (max-width: 768px) {
+  .tech-title {
+    font-size: 2.5rem; /* Smaller on tablets and phones */
+  }
 }
 
 .quest-border {
