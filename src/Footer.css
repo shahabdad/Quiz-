@@ -67,3 +67,14 @@ hr {
     transform: rotate(360deg);
   }
 }
+/* Hide all paragraphs except first two on small screens */
+@media (max-width: 768px) {
+  .footer-text p {
+    display: none; /* hide all paragraphs */
+  }
+  .footer-text p:nth-child(1),
+  .footer-text p:nth-child(2) {
+    display: block; /* show only first two */
+  }
+}
+

@@ -65,9 +65,15 @@ const Footer = () => {
             programming languages in the future.
           </p>
         </div>
+<div className="surprise-tip">
+  <FaCode className="surprise-icon" />
+  <span>Keep coding & keep smiling! 😄</span>
+</div>
 
         <hr />
         <p className="footer-copy">
+          {/* Surprise tip for small screens */}
+
           &copy; {new Date().getFullYear()} Shahab's C++ Quiz App. All rights reserved.
         </p>
       </div>
