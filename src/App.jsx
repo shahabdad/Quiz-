@@ -2,10 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
 import Quizzes from './Quizzes';
+import About from "./About"
 
 
-// const Quizzes = () => <h1>All Quizzes</h1>;
-const About = () => <h1>About Us</h1>;
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </div>
     </Router>

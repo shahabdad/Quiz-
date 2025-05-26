@@ -22,5 +22,107 @@
 }
 
 .blue-dash {
-  color: #007bff; /* Bootstrap primary blue */
+  color: #007bff; 
 }
+
+/* Default: hide on small screens */
+.responsive-dash {
+  display: none;
+}
+
+/* Show on screens 1024px and wider (laptop and up) */
+@media (min-width: 1024px) {
+  .responsive-dash {
+    display: inline;
+  }
+}
+
+/* Optional: style the blue line */
+.blue-dash {
+  color: blue; /* or use a custom color */
+  font-weight: bold;
+}
+
+/* Hide blue dashes on small screens, show on large screens */
+.responsive-dash {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .responsive-dash {
+    display: inline;
+  }
+}
+
+/* Blue dash style and animation */
+.blue-dash {
+  color: #00aaff;
+  font-weight: bold;
+  animation: blink 1.5s infinite alternate;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+/* Mouseover (hover) effect */
+.blue-dash:hover {
+  transform: scale(1.4) rotate(5deg);
+  color: #ffdd00;
+  animation: surprise 0.6s ease-out;
+}
+
+/* Blink animation */
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+    letter-spacing: 1px;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes surprise {
+  0% {
+    transform: scale(1) rotate(0deg);
+    color: #00aaff;
+  }
+  50% {
+    transform: scale(1.5) rotate(10deg);
+    color: #ff00cc;
+  }
+  100% {
+    transform: scale(1.2) rotate(5deg);
+    color: #ffdd00;
+  }
+}
+/* Bottom line only under 2025 */
+.year-underline {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+}
+
+/* The animated underline */
+.year-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0d6efd; /* Bootstrap primary blue */
+  animation: slide-in 1s ease-out;
+}
+
+/* Optional: animation for underline */
+@keyframes slide-in {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+

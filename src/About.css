@@ -1,42 +1,45 @@
 .about-container {
-  padding: 2rem;
-  background-color: #001f3f;
-  color: white;
+  background-color: #0b0c2a;
+  color: #f0f0f0;
+  padding: 3rem 2rem;
   font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
 }
 
 .about-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .about-header h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: #00d8ff;
+  margin-bottom: 0.5rem;
 }
 
 .about-header p {
-  font-size: 1.1rem;
-  color: #b0c4de;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .about-card {
-  background-color: #003366;
-  padding: 1.5rem;
-  border-radius: 10px;
+  background-color: #12143a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 216, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  box-shadow: 0 0 12px rgba(0, 216, 255, 0.1);
-  transition: transform 0.3s;
 }
 
 .about-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 216, 255, 0.3);
 }
 
 .about-icon {
@@ -46,12 +49,13 @@
 }
 
 .about-card h3 {
-  font-size: 1.4rem;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  font-size: 1.4rem;
 }
 
 .about-card p {
   font-size: 1rem;
   color: #d6e4f0;
+  line-height: 1.6;
 }
+
