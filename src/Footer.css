@@ -74,7 +74,7 @@ hr {
   }
   .footer-text p:nth-child(1),
   .footer-text p:nth-child(2) {
-    display: block; /* show only first two */
+    display: block;
   }
 }
 

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ModalForm from './ModalForm';
+
 
 import './Home.css';
 
 const Home = () => {
+const  [showModal,setShowModal]  = useState(false);
   return (
     <div className="container-fluid home-bg text-white">
 
@@ -56,9 +59,12 @@ const Home = () => {
         {/* Buttons */}
         <div className="row mt-4 gap-3 justify-content-center">
           <div className="col-auto">
-            <a href="/quizzes" className="btn btn-primary px-4">
+            {/* <a href="/quizzes" className="btn btn-primary px-4">
               START
-            </a>
+            </a> */}
+            <button className='btn btn-primary px-4' onClick={()=> setShowModal(true)}>
+              Start
+              </button>
           </div>
           <div className="col-auto">
             <a href="/about" className="btn btn-outline-primary px-4 text-white border-2">
@@ -67,7 +73,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+       {/* Modal Component */}
+      <ModalForm isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
+
   );
 };
 
