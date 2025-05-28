@@ -1,8 +1,10 @@
- import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import questions from "./questions";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import { FaCheckCircle, FaTimesCircle, FaEnvelope, FaRedoAlt } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
 import "./quiz.css";
 
 const Quizzes = () => {
@@ -10,8 +12,17 @@ const Quizzes = () => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [userAnswers, setUserAnswers] = useState([]);
-  const [userInfo, setUserInfo] = useState({ emailOrSim: "" });
-  const [submittedInfo, setSubmittedInfo] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+
+  useEffect(() => {
+    // Get user info from localStorage
+    const storedName = localStorage.getItem("username");
+    const storedEmail = localStorage.getItem("email");
+
+    if (storedName) setUserName(storedName);
+    if (storedEmail) setUserEmail(storedEmail);
+  }, []);
 
   const handleOptionClick = (option) => {
     const updatedAnswers = [...userAnswers];
@@ -27,19 +38,25 @@ const Quizzes = () => {
       setCurrentIndex(next);
     } else {
       setShowResult(true);
+
+      // Send result to admin via EmailJS
+      sendResultToAdmin();
     }
   };
 
-  const handleInputChange = (e) => {
-    setUserInfo({ ...userInfo, emailOrSim: e.target.value });
-  };
-
-  const handleSend = () => {
-    if (userInfo.emailOrSim.trim()) {
-      setSubmittedInfo(true);
-    } else {
-      alert("Please enter a valid Gmail or SIM number.");
-    }
+  const sendResultToAdmin = () => {
+    emailjs.send('your_service_id', 'your_template_id', {
+      to_email: 'shahabdad50@gmail.com',
+      user_name: userName || "Anonymous",
+      user_email: userEmail || "Not Provided",
+      user_score: `${score} / ${questions.length}`
+    }, 'your_public_key')
+    .then(() => {
+      console.log("✅ Result sent to admin!");
+    })
+    .catch((error) => {
+      console.error("❌ Failed to send result:", error);
+    });
   };
 
   const correctCount = score;
@@ -72,57 +89,26 @@ const Quizzes = () => {
           </div>
         ) : (
           <div className="quiz-result">
-            {submittedInfo ? (
-              <>
-                <div className="result-sent">
-                  ✅ Thank you! Message sent to <strong>{userInfo.emailOrSim}</strong>
-                </div>
+            <h3 className="result-title">🎓 Quiz Completed!</h3>
+            <p className="result-score">
+              Your Score: <strong>{score}</strong> / {questions.length}
+            </p>
+            <p className="result-counts">
+              <FaCheckCircle className="icon success" /> Correct: {correctCount} |{" "}
+              <FaTimesCircle className="icon danger" /> Incorrect: {incorrectCount}
+            </p>
 
-                {score === questions.length && (
-                  <div className="top-student-message">
-                    🏆 <strong>Top Student Achiever!</strong><br />
-                    You answered <strong>all {questions.length}</strong> questions correctly.<br />
-                    🎉 You've earned a <strong>Rs. 200 reward</strong> and 30 days premium access!<br />
-                    📩 We'll contact you within 24 hours. Stay tuned!
-                  </div>
-                )}
-
-                <p className="info-msg">We appreciate your effort and participation.</p>
-                <button className="restart-btn" onClick={() => window.location.reload()}>
-                  <FaRedoAlt /> Restart Quiz
-                </button>
-              </>
-            ) : (
-              <>
-                <h3 className="result-title">🎓 Quiz Completed!</h3>
-                <p className="result-score">
-                  Your Score: <strong>{score}</strong> / {questions.length}
-                </p>
-                <p className="result-counts">
-                  <FaCheckCircle className="icon success" /> Correct: {correctCount} |{" "}
-                  <FaTimesCircle className="icon danger" /> Incorrect: {incorrectCount}
-                </p>
-
-                {score === questions.length && (
-                  <div className="result-congrats">
-                    🎉 <strong>Congratulations!</strong> You answered all questions correctly!<br />
-                    You are eligible to win <strong>Rs. 200</strong> and 30 days access.
-                  </div>
-                )}
-
-                <div className="result-input">
-                  <input
-                    type="text"
-                    placeholder="Enter Gmail or SIM Number"
-                    value={userInfo.emailOrSim}
-                    onChange={handleInputChange}
-                  />
-                  <button onClick={handleSend}>
-                    <FaEnvelope /> Send Info & Show Message
-                  </button>
-                </div>
-              </>
+            {score === questions.length && (
+              <div className="result-congrats">
+                🎉 <strong>Congratulations!</strong> You answered all questions correctly!<br />
+                You are eligible to win <strong>Rs. 200</strong> and 30 days access.
+              </div>
             )}
+
+            <p className="info-msg">Result has been automatically sent to admin.</p>
+            <button className="restart-btn" onClick={() => window.location.reload()}>
+              <FaRedoAlt /> Restart Quiz
+            </button>
           </div>
         )}
 
