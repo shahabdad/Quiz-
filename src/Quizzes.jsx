@@ -51,7 +51,7 @@ const Quizzes = () => {
   user_score: `${score} / ${questions.length}`
 });
 
-    emailjs.send('service_pj9ijxi', 'template_9xrvtko', {
+    emailjs.send('service_pj9ijxi', 'template_jmf7bdl', {
       to_email: 'shahabdad50@gmail.com',
       user_name: userName || "Anonymous",
       user_email: userEmail || "Not Provided",
