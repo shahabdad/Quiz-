@@ -45,7 +45,7 @@ const Quizzes = () => {
   };
 
   const sendResultToAdmin = () => {
-    emailjs.send('your_service_id', 'your_template_id', {
+    emailjs.send('service_pj9ijxi', 'template_9xrvtko', {
       to_email: 'shahabdad50@gmail.com',
       user_name: userName || "Anonymous",
       user_email: userEmail || "Not Provided",
