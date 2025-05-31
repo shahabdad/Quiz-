@@ -45,17 +45,23 @@ const Quizzes = () => {
   };
 
   const sendResultToAdmin = () => {
+    console.log("Sending to admin:", {
+  user_name: userName,
+  user_email: userEmail,
+  user_score: `${score} / ${questions.length}`
+});
+
     emailjs.send('service_pj9ijxi', 'template_9xrvtko', {
       to_email: 'shahabdad50@gmail.com',
       user_name: userName || "Anonymous",
       user_email: userEmail || "Not Provided",
       user_score: `${score} / ${questions.length}`
-    }, 'your_public_key')
+    }, 'JNvRNXdWebxuGxlkM')
     .then(() => {
-      console.log("✅ Result sent to admin!");
+      console.log(" Result sent to admin!");
     })
     .catch((error) => {
-      console.error("❌ Failed to send result:", error);
+      console.error(" Failed to send result:", error);
     });
   };
 
