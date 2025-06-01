@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import ModalForm from './ModalForm';
+import ModalForm from './component/ModalForm';
 
 
 import './Home.css';

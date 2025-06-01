@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import questions from "./questions";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import Footer from "./component/Footer";
 import { FaCheckCircle, FaTimesCircle, FaRedoAlt } from "react-icons/fa";
 import { FaTrophy, FaMedal, FaAward } from "react-icons/fa";
 
 import emailjs from "@emailjs/browser";
-import Timer from "./Timer";
+import Timer from "./component/Timer";
 import "./quiz.css";
 
 const Quizzes = () => {
