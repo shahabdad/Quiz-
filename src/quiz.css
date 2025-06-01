@@ -131,3 +131,17 @@
   font-size: 1rem;
   text-align: center;
 }
+
+.nocopy {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: not-allowed !important;
+}
+
+/* .nocopy * {
+  /* cursor: not-allowed !important; */
+
+
+
