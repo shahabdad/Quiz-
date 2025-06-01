@@ -16,10 +16,10 @@ const Quizzes = () => {
   const [userAnswers, setUserAnswers] = useState([]);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
+  const [timeLeft, setTimeLeft] = useState(300); // 10 min
   const [timeUp, setTimeUp] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState("");
+  const [alertMessage, setAlertMessage] = useState(""); 
 
   useEffect(() => {
     // Get user info from localStorage
