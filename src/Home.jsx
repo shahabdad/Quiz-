@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ModalForm from './component/ModalForm';
+import { Link } from 'react-router-dom';
+
 
 
 import './Home.css';
@@ -67,9 +69,12 @@ const  [showModal,setShowModal]  = useState(false);
               </button>
           </div>
           <div className="col-auto">
-            <a href="/About" className="btn btn-outline-primary px-4 text-white border-2">
+            {/* <a href="/About" className="btn btn-outline-primary px-4 text-white border-2">
               ABOUT
-            </a>
+            </a> */}
+            <Link to='/about' className='btn btn-outline-primary px-4 text-white border-2'>
+            ABOUT
+            </Link>
           </div>
         </div>
       </div>
