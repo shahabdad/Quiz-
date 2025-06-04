@@ -1,7 +1,7 @@
 
 import React from "react";
 import "./Footer.css";
-import { FaCode } from "react-icons/fa"; // Icon for C++
+import { FaCode } from "react-icons/fa"; 
 
 const Footer = () => {
   return (
